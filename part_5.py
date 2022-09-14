@@ -69,12 +69,23 @@ def authors_books(stringvar):
             if author == stringvar:
                 print(title)
             
+def chad_book():
+    with open('book.txt', 'r') as file:
+        items = file.readlines()
+        name = 'default'
+        num_pages = 0
+        for line in items:
+            title, author, year, rating, pages = line.split(", ")
+            if int(pages) > num_pages:
+                num_pages = int(pages)
+                name = str(title)
+        print(f"The longest book is {name} with {num_pages}")
 
 
 def main_menu():
     choice = 0
     while choice == 0:
-        choice = input("What would you like to do?\nAdd a new book -- 1\nShow all books -- 2\nLook up an author's books -- 3\nClose the program -- 4\n--> ")
+        choice = input("What would you like to do?\nAdd a new book -- 1\nShow all books -- 2\nLook up an author's books -- 3\nClose the program -- 4\nWhat is the longest book? -- 5\n--> ")
         if (choice == '1'):
             new_book()
             choice = 0
@@ -87,6 +98,9 @@ def main_menu():
             choice = 0
         elif (choice == '4'):
             break
+        elif (choice == '5'):
+            chad_book()
+            choice = 0
         else:
             continue
 

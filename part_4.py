@@ -9,6 +9,9 @@
 ## Now convert the proper data-types front strings to either floats or ints depending on what it is. Feel free to comment out your old function so you don't get an error, or copy/paste and give it a new name.
 
 # Code here
+from turtle import title
+
+
 def new_book():
     title = input("Title: ")
     author = input("Author: ")
@@ -92,9 +95,11 @@ fav_books = [
 # Code here
 def bookie(strng):
     for item in strng:
-        print('====================')
-        for (key, value) in item.items():
-            print (key, value)       
+        print(f"Title: {item['title']}")
+        # for (key, value) in item.items():
+        #     print (key, value)
+bookie(fav_books)
+
 
 def main_menu():
     choice = 0

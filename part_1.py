@@ -44,5 +44,8 @@ print(sentence1, f'\n{sentence2}')
 print(f"Published in {publication_year} \nCurrent price: {book_price}\nIs it good? {is_awesome}")
 
 print('================== Types ===============')
+print(type(author))
+print(type(book_name))
+print(type(publication_year))
 print(type(book_price))
-
+print(type(is_awesome))
